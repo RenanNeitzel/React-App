@@ -7,7 +7,9 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
+
+import { Container, Header, Content, Button, Text } from 'native-base';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -20,11 +22,26 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+
+      <Container>
+        <Header />
+        <Content>
+          <Text style={styles.welcome}>Welcome to React Native!</Text>
+          <Text style={styles.instructions}>To get started, edit App.js</Text>
+          <Text style={styles.instructions}>{instructions}</Text>
+          <Text style={styles.name}>RENAN NEITZEL VIEIRA - REACT NATIVE APP - VEEK</Text>
+          <Button style={styles.button}>
+            <Text>Click Me!</Text>
+          </Button>
+        </Content>
+      </Container>
+
+      // <View style={styles.container}>
+      //   <Text style={styles.welcome}>Welcome to React Native!</Text>
+      //   <Text style={styles.instructions}>To get started, edit App.js</Text>
+      //   <Text style={styles.instructions}>{instructions}</Text>
+      //   <Text style={styles.name}>RENAN NEITZEL VIEIRA - REACT NATIVE APP - VEEK</Text>
+      // </View>
     );
   }
 }
@@ -39,11 +56,21 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    marginTop: 40,
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
+    marginBottom: 10,
+  },
+  name: {
+    textAlign: 'center',
+    color: 'red',
+    marginTop: 10,
+    fontWeight: "700",
+  },
+  button: {
+    left: "50%",
+    marginTop: 40,
   },
 });
